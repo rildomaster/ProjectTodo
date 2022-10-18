@@ -6,7 +6,8 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="inverted" translucent={ false } />
+      {/* <StatusBar style='dark' translucent={ false } backgroundColor='transparent' /> */}
+      <StatusBar style='light' translucent={ false } />
       <Home />
     </>
   );
