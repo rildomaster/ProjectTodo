@@ -71,7 +71,6 @@ export function Home() {
   
     return (
         <>
-            {/* <View style={styles.bar}/> */}
             <View style={styles.container}>
                 <Header />
                 <View style={styles.main}>
