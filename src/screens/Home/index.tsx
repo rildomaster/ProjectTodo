@@ -70,34 +70,37 @@ export function Home() {
     }
   
     return (
-        <View style={styles.container}>
-            <Header />
-            <View style={styles.main}>
-                <Search onClick={handleAddTask} />
-                <Counters 
-                    createdCount={counts.createdCount} 
-                    concludedCount={counts.concludedCount} 
-                />
+        <>
+            {/* <View style={styles.bar}/> */}
+            <View style={styles.container}>
+                <Header />
+                <View style={styles.main}>
+                    <Search onClick={handleAddTask} />
+                    <Counters 
+                        createdCount={counts.createdCount} 
+                        concludedCount={counts.concludedCount} 
+                    />
 
-                <FlatList
-                    style={styles.list}
-                    showsVerticalScrollIndicator={ false }
-                    data={tasks}
-                    keyExtractor={ item => item.id.toString() }
-                    renderItem={({ item }) => (
-                        <TaskItem 
-                            id={item.id}
-                            description={item.description}
-                            concluded={item.concluded}
-                            onCheck={handleConcludedTask}
-                            onDelete={handleDeleteTaskConfirm}
-                        />
-                    )}
-                    ListEmptyComponent={(
-                        <ContentEmpty />
-                    )}
-                />
+                    <FlatList
+                        style={styles.list}
+                        showsVerticalScrollIndicator={ false }
+                        data={tasks}
+                        keyExtractor={ item => item.id.toString() }
+                        renderItem={({ item }) => (
+                            <TaskItem 
+                                id={item.id}
+                                description={item.description}
+                                concluded={item.concluded}
+                                onCheck={handleConcludedTask}
+                                onDelete={handleDeleteTaskConfirm}
+                            />
+                        )}
+                        ListEmptyComponent={(
+                            <ContentEmpty />
+                        )}
+                    />
+                </View>
             </View>
-        </View>
+        </>
     );
 }
